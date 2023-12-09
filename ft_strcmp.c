@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 23:14:12 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 23:34:35 by polenyc          ###   ########.fr       */
+/*   Created: 2023/12/09 13:30:38 by polenyc           #+#    #+#             */
+/*   Updated: 2023/12/09 15:48:16 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-int	ft_atoi(const char *nptr)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	result;
-	int	sign;
-
-	sign = 1;
-	result = 0;
-	if (*nptr == '\0')
-		return (0);
-	while (ft_isspace(*nptr))
-		++nptr;
-	if (*nptr == '-' || *nptr == '+')
+	while ((*s1 == *s2) && *s1)
 	{
-		if (*nptr == '-')
-			sign = -1;
-		++nptr;
+		++s1;
+		++s2;
 	}
-	while (ft_isdigit(*nptr))
-		result = result * 10 + ((*nptr++) - '0');
-	return (result * sign);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }

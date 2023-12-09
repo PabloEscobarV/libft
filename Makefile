@@ -6,7 +6,7 @@
 #    By: polenyc <polenyc@student.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 18:21:04 by polenyc           #+#    #+#              #
-#    Updated: 2023/11/26 20:46:05 by polenyc          ###   ########.fr        #
+#    Updated: 2023/12/09 23:36:08 by polenyc          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ ft_putstr_fd.c ft_putstr.c ft_strlen.c ft_toupper.c ft_isalnum.c ft_memcmp.c \
 ft_split.c ft_strmapi.c ft_isalpha.c ft_memcpy.c ft_strchr.c ft_strncmp.c \
 ft_isascii.c ft_memmove.c ft_strdup.c ft_strnstr.c ft_isdigit.c ft_memset.c \
 ft_striteri.c ft_strrchr.c ft_isprint.c ft_putchar_fd.c ft_putchar.c \
-ft_strjoin.c ft_strtrim.c \
+ft_strjoin.c ft_strtrim.c ft_strcmp.c ft_atoi_base.c ft_isspace.c\
 
 SRCBONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c \
@@ -39,7 +39,7 @@ $(NAME): $(OBJECTS)
 
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGSO) $< -o $@
+	@$(CC) $(CFLAGSO) $< -o $@
 
 bonus: $(OBJECTSBONUS)
 	ar rc $(NAME) $(OBJECTSBONUS)
