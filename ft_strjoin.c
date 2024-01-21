@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 20:46:07 by polenyc           #+#    #+#             */
-/*   Updated: 2024/01/21 17:28:11 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/01/21 17:31:39 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!arr)
 		return (NULL);
 	ft_strcpy(ft_strcpy(arr, s1), s2);
+	arr[size1 + size2] = '\0';
 	return (arr);
 }
