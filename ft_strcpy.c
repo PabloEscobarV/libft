@@ -6,12 +6,14 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 17:20:07 by blackrider        #+#    #+#             */
-/*   Updated: 2024/01/21 17:23:43 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/01/21 17:29:25 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char const *src)
 {
+    if (!src)
+        return (dest);
 	while (*src != 0)
 	{
 		*dest = *src;

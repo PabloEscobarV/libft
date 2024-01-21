@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 20:46:07 by polenyc           #+#    #+#             */
-/*   Updated: 2024/01/21 17:23:31 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/01/21 17:28:11 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*arr;
-	char	*tmp;
 	size_t	size1;
 	size_t	size2;
 
@@ -25,7 +24,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	arr = malloc((size1 + size2 + 1) * sizeof(char));
 	if (!arr)
 		return (NULL);
-	tmp = ft_strcpy(arr, s1);
-	ft_strcpy(tmp, s2);
+	ft_strcpy(ft_strcpy(arr, s1), s2);
 	return (arr);
 }
