@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 17:20:07 by blackrider        #+#    #+#             */
-/*   Updated: 2024/01/21 18:59:06 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/01/22 14:06:51 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcpy(char *dest, char const *src)
 {
-    if (!src)
+	if (!src)
 		return (dest);
 	while (*src != '\0')
 	{

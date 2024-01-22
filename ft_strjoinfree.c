@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
+/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 17:08:45 by blackrider        #+#    #+#             */
-/*   Updated: 2024/01/21 19:00:06 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/01/22 14:12:42 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strjoinfree(char *s1, char *s2, int pos)
+char	*ft_strjoinfree(char *s1, char *s2, int pos)
 {
 	char	*data;
 
