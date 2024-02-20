@@ -1,45 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dllist.c                                           :+:      :+:    :+:   */
+/*   dllistdelnode.c.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:21:01 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/20 14:17:29 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/20 16:36:43 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-t_dllist	*dllistnewnode(int pid, void *data)
+t_dllist    *dllistdelnode(t_dllist **dllst, void (*del)(void *))
 {
-	t_dllist	*tmp;
+    t_dllist    *tmp;
 
-	if (!data)
+	if (!(*dllst))
 		return (NULL);
-	tmp = malloc(sizeof(t_dllist));
-	if (!tmp)
-		return (NULL);
-	tmp->pid = pid;
-	tmp->data = data;
-	tmp->next = NULL;
-	tmp->previous = NULL;
-	return (tmp);
-}
-
-int	dllistsize(t_dllist *dllst)
-{
-	int			size;
-
-	if (!dllst)
-		return (0);
-	size = 0;
-	while (dllst)
-	{
-		dllst = dllst->next;
-		++size;
-	}
-	return (size);
+	tmp = *dllst;
+	if ((*dllst)->previous && (*dllst)->previous->next)
+		(*dllst)->previous->next = (*dllst)->next;
+	if ((*dllst)->next && (*dllst)->previous != (*dllst)->next)
+		(*dllst)->next->previous = (*dllst)->previous;
+	*dllst = (*dllst)->next;
+	del(tmp->data);
+	free(tmp);
+	return (*dllst);
 }

@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:17:18 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/20 14:17:30 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/20 16:54:41 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,16 @@ void	*dllistclear(t_dllist **dllst, void (*del)(void *d))
 {
 	if (!(*dllst))
 		return (NULL);
-	dllistclear(&((*dllst)->next), del);
-	del((*dllst)->data);
-	free(*dllst);
-	*dllst = NULL;
-	return (NULL);
+    while((*dllst)->previous && (*dllst)->previous->next)
+        *dllst = (*dllst)->previous;
+    while ((*dllst)->next)
+    {
+        *dllst = (*dllst)->next;
+        del((*dllst)->previous->data);
+        free((*dllst)->previous);
+        (*dllst)->previous = NULL;
+    }
+    del((*dllst)->data);
+    free(*dllst);
+    return (NULL);
 }

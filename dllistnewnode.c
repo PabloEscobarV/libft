@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:17:41 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/20 14:17:52 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/20 16:53:37 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ t_dllist	*dllistnewnode(int pid, void *data)
 {
 	t_dllist	*tmp;
 
-	if (!data)
-		return (NULL);
 	tmp = malloc(sizeof(t_dllist));
 	if (!tmp)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/02/20 15:00:08 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/20 16:36:43 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int			ft_dlstsize(t_dlist *lst);
 t_dllist	*dllistadd_back(t_dllist **dllst, t_dllist *newnode);
 t_dllist	*dllistadd_front(t_dllist **dllst, t_dllist *newnode);
 void		*dllistclear(t_dllist **dllst, t_del del);
-t_dllist	*dllistdelnode(t_dllist **dllst, t_del del);
+t_dllist    *dllistdelnode(t_dllist **dllst, t_del del);
 t_dllist	*dllistnewnode(int pid, void *data);
 int			dllistsize(t_dllist *dllst);
 #endif
