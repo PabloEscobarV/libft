@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:15:11 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/20 14:15:29 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/20 15:07:04 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ t_dllist	*dllistadd_back(t_dllist **dllst, t_dllist *newnode)
 		(*dllst)->next = newnode;
 	}
 	(*dllst)->previous = newnode;
-	return (*dllst);
+	return (newnode);
 }
