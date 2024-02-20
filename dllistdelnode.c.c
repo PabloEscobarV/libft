@@ -6,26 +6,67 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:21:01 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/20 16:36:43 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/20 20:10:11 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-t_dllist    *dllistdelnode(t_dllist **dllst, void (*del)(void *))
+t_dllist	*dllistdelfirst(t_dllist **dll, void (*del)(void *))
 {
-    t_dllist    *tmp;
+	t_dllist	*tmp;
 
-	if (!(*dllst))
+	if (!(*dll))
 		return (NULL);
-	tmp = *dllst;
-	if ((*dllst)->previous && (*dllst)->previous->next)
-		(*dllst)->previous->next = (*dllst)->next;
-	if ((*dllst)->next && (*dllst)->previous != (*dllst)->next)
-		(*dllst)->next->previous = (*dllst)->previous;
-	*dllst = (*dllst)->next;
-	del(tmp->data);
-	free(tmp);
-	return (*dllst);
+	tmp = (*dll)->next;
+	if (tmp != (*dll)->previous)
+		tmp->previous = (*dll)->previous;
+	else
+		tmp->previous = NULL;
+	del((*dll)->data);
+	free(*dll);
+	*dll = tmp;
+	return (*dll);
+}
+
+t_dllist	*dllistdellast(t_dllist **dll, void (*del)(void *))
+{
+	t_dllist	*tmp;
+
+	if (!(*dll))
+		return (NULL);
+	tmp = (*dll)->previous;
+	if (tmp)
+		tmp->next = NULL;
+	del((*dll)->data);
+	free(*dll);
+	*dll = tmp;
+	return (*dll);
+}
+
+t_dllist	*dllistdelnode(t_dllist **dll, void (*del)(void *))
+{
+	t_dllist	*tmp;
+
+	if (!(*dll))
+		return (NULL);
+	if (*dll == (*dll)->previous || (!(*dll)->next && !(*dll)->previous))
+	{
+		del((*dll)->data);
+		free(*dll);
+		*dll = NULL;
+		return (*dll);
+	}
+	if (!(*dll)->previous->next)
+		return (dllistdelfirst(dll, del));
+	if (!(*dll)->next)
+		return (dllistdellast(dll, del));
+	tmp = *dll;
+	tmp->previous->next = tmp->next;
+	tmp->next->previous = tmp->previous;
+	*dll = tmp->next;
+	del((*dll)->data);
+	free(*dll);
+	return (*dll);
 }
