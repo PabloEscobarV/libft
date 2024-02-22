@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/02/20 20:10:10 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/02/22 14:52:52 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ typedef struct s_dllist
 	struct s_dllist	*next;
 	struct s_dllist	*previous;
 }					t_dllist;
+
+typedef struct s_llist
+{
+	void			*data;
+	struct s_llist	*next;
+	struct s_llist	*previous;
+}					t_llist;
 
 int			ft_atoi_base(const char *nptr, const char *base);
 long		ft_atoi(const char *nptr);
@@ -105,4 +112,11 @@ void		*dllistclear(t_dllist **dllst, t_del del);
 t_dllist	*dllistdelnode(t_dllist **dllst, t_del del);
 t_dllist	*dllistnewnode(int pid, void *data);
 int			dllistsize(t_dllist *dllst);
+/////////////////////////////////////////////T_LLIST\\\\\\\\\\\\\\\\\\\\\\\\\\/
+t_llist		*llistadd_back(t_llist **llst, t_llist *newnode);
+t_llist		*llistadd_front(t_llist **llst, t_llist *newnode);
+void		*llistclear(t_llist **llst, t_del del);
+t_llist		*llistdelnode(t_llist **llst, t_del del);
+t_llist		*llistnewnode(void *data);
+int			llistsize(t_llist *llst);
 #endif
