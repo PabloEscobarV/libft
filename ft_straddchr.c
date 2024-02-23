@@ -1,27 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   llistnewnd.c                                       :+:      :+:    :+:   */
+/*   ft_straddchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 14:47:40 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/22 18:46:38 by blackrider       ###   ########.fr       */
+/*   Created: 2024/02/23 13:45:50 by blackrider        #+#    #+#             */
+/*   Updated: 2024/02/23 13:58:50 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-t_llist	*llistnewnode(void *data)
+char	*ft_straddchr(char *dest, char ch)
 {
-	t_llist	*tmp;
+	char	*tmp;
+	char	*res;
+	int		size;
 
-	tmp = malloc(sizeof(t_llist));
+	size = ft_strlen(dest) + 2;
+	if (!ch)
+		--size;
+	tmp = malloc(size * sizeof(char));
 	if (!tmp)
 		return (NULL);
-	tmp->data = data;
-	tmp->next = NULL;
-	tmp->previous = NULL;
+	res = tmp;
+	while (*dest)
+	{
+		*tmp = *dest;
+		++dest;
+		++tmp;
+	}
+	*tmp = ch;
+	if (ch)
+		*(tmp + 1) = '\0';
+	return (res);
+}
+
+char	*ft_straddchrfree(char *dest, char ch)
+{
+	char	*tmp;
+
+	tmp = ft_straddchr(dest, ch);
+	free(dest);
 	return (tmp);
 }
