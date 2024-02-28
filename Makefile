@@ -6,11 +6,12 @@
 #    By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 18:21:04 by polenyc           #+#    #+#              #
-#    Updated: 2024/02/28 17:00:30 by blackrider       ###   ########.fr        #
+#    Updated: 2024/02/28 18:23:20 by blackrider       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+BONUSNAME = libftfull.a
 
 SRC = $(wildcard *.c)
 SRCBONUS = $(wildcard *.c)
@@ -25,13 +26,23 @@ CFLAGSO = -c -Wall -Wextra -Werror
 
 all: $(NAME)
 
-bonus: $(OBJECTSBONUS) $(NAME)
-	ar rc $(NAME) $(OBJECTSBONUS)
-	ranlib $(NAME)
+bonus: $(BONUSNAME)
+
+clean:
+	/bin/rm -rf $(OBJ_DIR)
+
+fclean: clean
+	/bin/rm -f $(NAME) $(BONUSNAME)
+
+re: fclean all
 
 $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
+
+$(BONUSNAME): $(OBJECTSBONUS)
+	ar rc $(BONUSNAME) $(OBJECTSBONUS)
+	ranlib $(BONUSNAME)
 
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)
@@ -40,14 +51,6 @@ $(OBJ_DIR)/%.o: %.c
 $(OBJDIRBONUS)/%.o: %.c
 	@mkdir -p $(OBJDIRBONUS)
 	@$(CC) $(CFLAGSO) $< -o $@
-
-clean:
-	/bin/rm -rf $(OBJ_DIR)
-
-fclean: clean
-	/bin/rm -f $(NAME)
-
-re: fclean all
 
 # SRC = ft_atoi.c ft_itoa.c ft_putendl_fd.c ft_strlcat.c ft_substr.c ft_bzero.c \
 # ft_putnbr_fd.c ft_putnbr.c ft_strlcpy.c ft_tolower.c ft_calloc.c ft_memchr.c \
