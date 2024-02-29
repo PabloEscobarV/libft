@@ -6,7 +6,7 @@
 #    By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 18:21:04 by polenyc           #+#    #+#              #
-#    Updated: 2024/02/28 18:23:20 by blackrider       ###   ########.fr        #
+#    Updated: 2024/02/29 09:58:02 by blackrider       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCBONUS = $(wildcard *.c)
 OBJ_DIR = objs
 OBJDIRBONUS = $(OBJ_DIR)/objsbonus
 OBJECTS = $(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))
-OBJECTSBONUS = $(addprefix $(OBJDIRBONUS)/, $(SRCBONUS:%.c=%.o))
+OBJECTSBONUS = $(addprefix $(OBJ_DIR)/, $(SRCBONUS:%.c=%.o))
 CC = gcc
 CFLAGSO = -c -Wall -Wextra -Werror
 .PHONY: all clean fclean re bonus
@@ -48,9 +48,9 @@ $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGSO) $< -o $@
 
-$(OBJDIRBONUS)/%.o: %.c
-	@mkdir -p $(OBJDIRBONUS)
-	@$(CC) $(CFLAGSO) $< -o $@
+# $(OBJ_DIR)/%.o: %.c
+# 	@mkdir -p $(OBJ_DIR)
+# 	@$(CC) $(CFLAGSO) $< -o $@
 
 # SRC = ft_atoi.c ft_itoa.c ft_putendl_fd.c ft_strlcat.c ft_substr.c ft_bzero.c \
 # ft_putnbr_fd.c ft_putnbr.c ft_strlcpy.c ft_tolower.c ft_calloc.c ft_memchr.c \
