@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 19:49:33 by polenyc           #+#    #+#             */
-/*   Updated: 2023/11/26 19:49:59 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/03/07 13:29:35 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *s)
+void	ft_putstr(const char *s)
 {
 	while (*s)
 		write(1, s++, sizeof(char));
