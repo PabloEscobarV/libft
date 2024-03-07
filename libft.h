@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/02/23 13:58:51 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/03/07 13:31:17 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_putnbr(int n);
 void		ft_putstr_fd(char *s, int fd);
-void		ft_putstr(char *s);
+void		ft_putstr(const char *s);
 char		**ft_split(char const *s, char c);
 char		*ft_straddchr(char *dest, char ch);
 char		*ft_straddchrfree(char *dest, char ch);
