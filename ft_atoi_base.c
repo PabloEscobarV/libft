@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.fr>               +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 23:15:25 by polenyc           #+#    #+#             */
-/*   Updated: 2023/12/09 23:52:22 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/04/02 23:06:35 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+const char	*getprefix(const char *num, int size)
+{
+	if (size != 16 && size != 8)
+		return (num);
+	while (*num == '0')
+		++num;
+	if (*num == 'X' || *num == 'x')
+		return (num + 1);
+	return (num);
+}
 
 int	number(const char *base, char ch)
 {
@@ -22,11 +33,11 @@ int	number(const char *base, char ch)
 	return (num);
 }
 
-int	ft_atoi_base(const char *nptr, const char *base)
+long	ft_atoi_base(const char *nptr, const char *base)
 {
-	int	result;
-	int	sign;
-	int	size_b;
+	long	result;
+	int		sign;
+	int		size_b;
 
 	sign = 1;
 	result = 0;
@@ -41,10 +52,11 @@ int	ft_atoi_base(const char *nptr, const char *base)
 			sign = -1;
 		++nptr;
 	}
+	nptr = getprefix(nptr, size_b);
 	while (*nptr && ft_strchr(base, *nptr))
 	{
 		result = result * size_b + number(base, *nptr);
 		++nptr;
 	}
-	return (result * sign);
+	return (result * (long)sign);
 }
