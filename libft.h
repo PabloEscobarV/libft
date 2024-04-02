@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/04/02 22:09:16 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/04/02 23:08:05 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_llist
 	struct s_llist	*previous;
 }					t_llist;
 
-int			ft_atoi_base(const char *nptr, const char *base);
+long		ft_atoi_base(const char *nptr, const char *base);
 long		ft_atoi(const char *nptr);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
