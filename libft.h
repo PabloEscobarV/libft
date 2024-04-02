@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/03/11 13:22:01 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/04/02 16:58:03 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 size_t		ft_strlen(const char *str);
+size_t		ft_filesize(char *filename);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
