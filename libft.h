@@ -6,13 +6,18 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/04/02 23:08:05 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/04/03 13:30:51 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+
+# define HEX_BASE_L	"0123456789ABCDEF"
+# define HEX_BASE_S	"0123456789abcdef"
+# define OCTA_BASE	"012345678"
+# define BIN_BASE	"01"
 
 typedef void	(*t_del)(void *);
 
