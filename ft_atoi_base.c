@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 23:15:25 by polenyc           #+#    #+#             */
-/*   Updated: 2024/04/03 13:30:47 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/04/03 14:21:40 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,46 +23,57 @@ const char	*getprefix(const char *num, int size)
 	return (num);
 }
 
-int	number(const char *base, int size_b, char ch)
+int	setreg(const char *base, int size_b)
 {
-	char	*base_tmp;
+	if (size_b > 10 && base[10] >= 'A' && base[10] <= 'Z')
+		return (32);
+	if (size_b > 10 && base[10] >= 'a' && base[10] <= 'z')
+		return (-32);
+	return (0);
+}
+
+int	number(const char *base, int reg, char ch)
+{
 	int		num;
-	int		base_chang;
 
 	num = 0;
-	if (size_b > 10 && base[10] >= 'A' && base[10] <= 'Z')
-		base_chang = 32;
-	if (size_b > 10 && base[10] >= 'a' && base[10] <= 'z')
-		base_chang = -32;
-	while (base[num] != ch || (base[num] + base_chang) != ch)
+	while (base[num] != ch && (base[num] + reg) != ch)
 		++num;
 	return (num);
 }
 
-long	ft_atoi_base(const char *nptr, const char *base)
+long	getnum(const char *num, const char *base, int size, int reg)
 {
-	long	result;
+	long	res;
+
+	res = 0;
+	while (*num && (ft_strchr(base, *num) || ft_strchr(base, *num - reg)))
+	{
+		res = res * size + number(base, reg, *num);
+		++num;
+	}
+	return (res);
+}
+
+long	ft_atoi_base(const char *num, const char *base)
+{
 	int		sign;
 	int		size_b;
+	int		reg;
 
 	sign = 1;
-	result = 0;
-	if (*nptr == '\0')
+	if (!num || !base)
 		return (0);
 	size_b = ft_strlen(base);
-	while (ft_isspace(*nptr))
-		++nptr;
-	if (*nptr == '-' || *nptr == '+')
+	while (ft_isspace(*num))
+		++num;
+	if (*num == '-' || *num == '+')
 	{
-		if (*nptr == '-')
+		if (*num == '-')
 			sign = -1;
-		++nptr;
+		++num;
 	}
-	nptr = getprefix(nptr, size_b);
-	while (*nptr && ft_strchr(base, *nptr))
-	{
-		result = result * size_b + number(base, size_b, *nptr);
-		++nptr;
-	}
-	return (result * (long)sign);
+	reg = setreg(base, size_b);
+	num = getprefix(num, size_b);
+	return (getnum(num, base, size_b, reg) * (long)sign);
 }
