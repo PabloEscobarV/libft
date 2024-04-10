@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/04/03 13:30:51 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/04/10 14:31:13 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,4 +129,8 @@ void		llistiter(t_llist *lst, void (*f)(void *));
 t_llist		*llistnewnode(void *data);
 t_llist		*llistmap(t_llist *lst, void *(*f)(void *), void (*del)(void *));
 int			llistsize(t_llist *llst);
+/////////////////////////////////////////////FT_FREE\\\\\\\\\\\\\\\\\\\\\\\\\\/
+void		*ft_free(void *ptr);
+void		*ft_free_d(void **ptr);
+void		*ft_free_t(void ***ptr);
 #endif
