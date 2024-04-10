@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/04/10 14:31:13 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/04/10 14:49:26 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,4 +133,6 @@ int			llistsize(t_llist *llst);
 void		*ft_free(void *ptr);
 void		*ft_free_d(void **ptr);
 void		*ft_free_t(void ***ptr);
+/////////////////////////////////////////////FT_FILE\\\\\\\\\\\\\\\\\\\\\\\\\\/
+long		filesize(const char *filename);
 #endif
