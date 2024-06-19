@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:38:29 by polenyc           #+#    #+#             */
-/*   Updated: 2023/11/21 00:50:00 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/06/19 15:52:11 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char	**ft_split(char const *s, char c)
 	char	**arr_tmp;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	arr = create_matrix(s, c);
 	if (!arr)
 		return (NULL);
