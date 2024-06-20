@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/04/10 14:49:26 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/06/20 14:19:09 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int			ft_isdigit(int arg);
 int			ft_isprint(int arg);
 int			ft_isspace(int c);
 char		*ft_itoa(int n);
+int			ft_matsize(const char **matrix);
 void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
@@ -80,6 +81,7 @@ char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strjoinfree(char *s1, char *s2, int pos);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *src);
+char		**ft_strsdup(const char **src);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
