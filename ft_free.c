@@ -6,11 +6,16 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:28:04 by blackrider        #+#    #+#             */
-/*   Updated: 2024/04/10 14:43:08 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/06/21 15:19:03 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_freenode(void *data)
+{
+	free(data);
+}
 
 void	*ft_free(void *ptr)
 {

@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/06/20 14:19:09 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/06/21 16:59:27 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,11 @@ char		*ft_strjoinfree(char *s1, char *s2, int pos);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *src);
 char		**ft_strsdup(const char **src);
+char		*ft_strndup(const char *src, int n);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
+size_t		ft_strncpy(char *dest, const char *src, size_t size);
 size_t		ft_strlen(const char *str);
 size_t		ft_filesize(char *filename);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -132,6 +134,7 @@ t_llist		*llistnewnode(void *data);
 t_llist		*llistmap(t_llist *lst, void *(*f)(void *), void (*del)(void *));
 int			llistsize(t_llist *llst);
 /////////////////////////////////////////////FT_FREE\\\\\\\\\\\\\\\\\\\\\\\\\\/
+void		ft_freenode(void *data);
 void		*ft_free(void *ptr);
 void		*ft_free_d(void **ptr);
 void		*ft_free_t(void ***ptr);
