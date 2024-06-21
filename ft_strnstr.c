@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 21:05:43 by polenyc           #+#    #+#             */
-/*   Updated: 2024/06/19 15:19:36 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/06/21 22:05:13 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strnstr(const char *str, const char *s, size_t len)
 {
-	size_t	j;
+	size_t	i;
 	size_t	len_str;
 
 	if (*s == '\0')
@@ -23,12 +23,12 @@ char	*ft_strnstr(const char *str, const char *s, size_t len)
 	len_str = ft_strlen(str);
 	if (len_str < len)
 		len = len_str;
-	while (*str != '\0' && len > 0)
+	while (*str && len > 0)
 	{
-		j = 0;
-		while (s[j] != '\0' && *(str + j) == s[j] && j < len)
-			++j;
-		if (s[j] == '\0')
+		i = 0;
+		while (s[i] && *(str + i) == s[i] && i < len)
+			++i;
+		if (!s[i])
 			return ((char *)str);
 		++str;
 		--len;
