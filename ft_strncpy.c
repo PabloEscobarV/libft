@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 20:54:23 by polenyc           #+#    #+#             */
-/*   Updated: 2024/06/24 12:30:36 by polenyc          ###   ########.fr       */
+/*   Created: 2024/06/24 12:30:24 by polenyc           #+#    #+#             */
+/*   Updated: 2024/06/24 12:30:39 by polenyc          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strncpy(char *dest, const char *src, size_t size)
 {
 	size_t	src_len;
 
@@ -27,5 +27,5 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	while (--size)
 		dest[size] = src[size];
 	dest[size] = src[size];
-	return (src_len);
+	return (0);
 }
