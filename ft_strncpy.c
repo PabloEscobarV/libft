@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:30:24 by polenyc           #+#    #+#             */
-/*   Updated: 2024/06/24 12:30:39 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/06/25 13:57:38 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ size_t	ft_strncpy(char *dest, const char *src, size_t size)
 	if (size > src_len)
 		size = src_len + 1;
 	dest[--size] = '\0';
-	while (--size)
+	while (size)
+	{
+		--size;
 		dest[size] = src[size];
-	dest[size] = src[size];
+	}
 	return (0);
 }

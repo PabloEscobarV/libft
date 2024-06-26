@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 15:52:33 by blackrider        #+#    #+#             */
-/*   Updated: 2024/06/21 17:56:35 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/06/25 13:57:42 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strndup(const char *src, int n)
 {
 	char	*tmp;
 
+	if (!(*src))
+		n = 0;
 	tmp = malloc(++n * sizeof(char));
 	if (!tmp)
 		return (NULL);
