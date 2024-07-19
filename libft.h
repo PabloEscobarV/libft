@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/06/24 12:31:27 by polenyc          ###   ########.fr       */
+/*   Updated: 2024/07/19 21:01:08 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ void		llistiter(t_llist *lst, void (*f)(void *));
 t_llist		*llistnewnode(void *data);
 t_llist		*llistmap(t_llist *lst, void *(*f)(void *), void (*del)(void *));
 int			llistsize(t_llist *llst);
+t_llist		*llistinsert(t_llist *pos, t_llist *newnode);
 /////////////////////////////////////////////FT_FREE\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		ft_freenode(void *data);
 void		*ft_free(void *ptr);
