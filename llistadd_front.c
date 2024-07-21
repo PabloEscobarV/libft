@@ -6,7 +6,7 @@
 /*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:34:16 by blackrider        #+#    #+#             */
-/*   Updated: 2024/02/22 14:54:02 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/07/21 15:43:50 by blackrider       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ t_llist	*llistadd_front(t_llist **llst, t_llist *newnode)
 	else
 		newnode->previous = tmp;
 	tmp->previous = newnode;
-	tmp = newnode;
-	return (*llst);
+	return (newnode);
 }
