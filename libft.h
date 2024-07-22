@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/07/20 21:35:40 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/07/22 18:18:02 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *src);
 char		**ft_strsdup(const char **src);
 char		*ft_strndup(const char *src, int n);
+char		*ft_strldup(const char *src, int n);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
