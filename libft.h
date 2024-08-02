@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/07/22 18:18:02 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/02 14:46:53 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char		*ft_strldup(const char *src, int n);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
-size_t		ft_strncpy(char *dest, const char *src, size_t size);
+char		*ft_strncpy(char *dest, const char *src, size_t size);
 size_t		ft_strlen(const char *str);
 size_t		ft_filesize(char *filename);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
