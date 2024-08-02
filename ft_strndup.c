@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 15:52:33 by blackrider        #+#    #+#             */
-/*   Updated: 2024/06/25 13:57:42 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/08/02 16:08:42 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,9 @@ char	*ft_strndup(const char *src, int n)
 
 	if (!(*src))
 		n = 0;
-	tmp = malloc(++n * sizeof(char));
+	tmp = malloc((n + 1) * sizeof(char));
 	if (!tmp)
 		return (NULL);
-	if (ft_strncpy(tmp, src, n))
-	{
-		free(tmp);
-		ft_putstr("ERROR!!!:\tft_strndup\n");
-		return (NULL);
-	}
+	ft_strncpy(tmp, src, n);
 	return (tmp);
 }
