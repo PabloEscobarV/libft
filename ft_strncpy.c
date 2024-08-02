@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:30:24 by polenyc           #+#    #+#             */
-/*   Updated: 2024/08/02 14:46:54 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/02 14:51:08 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 char	*ft_strncpy(char *dest, const char *src, size_t size)
 {
+	size_t	i;
+
 	if (!dest)
 		return (NULL);
 	if (size <= 0 || !src)
 		return (dest);
 	dest[--size] = '\0';
-	while (size)
-	{
-		--size;
-		dest[size] = src[size];
-	}
-	return (dest);
+	i = -1;
+	while (++i < size)
+		dest[i] = src[i];
+	return (dest + size);
 }
