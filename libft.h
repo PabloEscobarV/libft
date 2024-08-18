@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/08/02 14:54:36 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/18 20:45:30 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,4 +145,6 @@ void		*ft_free_t(void ***ptr);
 long		filesize(const char *filename);
 /////////////////////////////////////////////FT_FILE\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		*ft_perror(const char *msg);
+/////////////////////////////////////////////FT_GETPRIMES\\\\\\\\\\\\\\\\\\\\\/
+t_llist		*ft_getprimes(unsigned long num);
 #endif
