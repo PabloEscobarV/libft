@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_perror.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 21:34:26 by blackrider        #+#    #+#             */
-/*   Updated: 2024/07/22 14:42:00 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/08/19 19:14:36 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	*ft_perror(const char *msg)
 {
+	ft_putstr(P_C_RED);
 	ft_putstr(msg);
+	ft_putstr(P_C_RED);
 	ft_putchar('\n');
 	return (NULL);
 }

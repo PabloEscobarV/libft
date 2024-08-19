@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/08/18 20:45:30 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 19:16:05 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 # define HEX_BASE_S	"0123456789abcdef"
 # define OCTA_BASE	"012345678"
 # define BIN_BASE	"01"
+# define P_C_BLACK	"\033[30m"
+# define P_C_RED	"\033[31m"
+# define P_C_GREEN	"\033[32m"
+# define P_C_YELLOW	"\033[33m"
+# define P_C_BLUE	"\033[34m"
+# define P_C_MAGENT	"\033[35m"
+# define P_C_CYAN	"\033[36m"
+# define P_C_WHITE	"\033[37m"
+
 
 typedef void	(*t_del)(void *);
 
@@ -146,5 +155,6 @@ long		filesize(const char *filename);
 /////////////////////////////////////////////FT_FILE\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		*ft_perror(const char *msg);
 /////////////////////////////////////////////FT_GETPRIMES\\\\\\\\\\\\\\\\\\\\\/
+char		*ft_getmarkprimes(unsigned long num);
 t_llist		*ft_getprimes(unsigned long num);
 #endif
