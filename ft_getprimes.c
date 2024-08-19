@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:46:03 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2024/08/19 19:16:49 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 19:30:42 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	*crtint(unsigned long num)
 t_llist	*ft_getprimes(unsigned long num)
 {
 	unsigned long	i;
-	char			*tmp;
+	t_uchar			*tmp;
 	t_llist			*primenums;
 
 	if (num < 2)

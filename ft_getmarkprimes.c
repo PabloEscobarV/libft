@@ -6,18 +6,18 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:02:57 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2024/08/19 19:15:42 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 19:30:23 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*initarray(unsigned long num)
+t_uchar	*initarray(unsigned long num)
 {
-	char	*tmp;
+	t_uchar	*tmp;
 
-	tmp = malloc((num + 1) * sizeof(char));
+	tmp = malloc((num + 1) * sizeof(t_uchar));
 	if (!tmp)
 	{
 		ft_perror("ERROR: Bad alocation mammory");
@@ -28,11 +28,11 @@ char	*initarray(unsigned long num)
 	return (tmp);
 }
 
-char	*ft_getmarkprimes(unsigned long num)
+t_uchar	*ft_getmarkprimes(unsigned long num)
 {
 	unsigned long		j;
 	unsigned long		i;
-	char				*tmp;
+	t_uchar				*tmp;
 
 	if (num < 2)
 		return (NULL);

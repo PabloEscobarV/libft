@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/08/19 19:16:05 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/19 19:31:06 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@
 # define P_C_CYAN	"\033[36m"
 # define P_C_WHITE	"\033[37m"
 
+typedef unsigned char	t_uchar;
+typedef unsigned int	t_uint;
+typedef unsigned long	t_ulong;
 
-typedef void	(*t_del)(void *);
+typedef void			(*t_del)(void *);
 
 typedef struct s_list
 {
@@ -155,6 +158,6 @@ long		filesize(const char *filename);
 /////////////////////////////////////////////FT_FILE\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		*ft_perror(const char *msg);
 /////////////////////////////////////////////FT_GETPRIMES\\\\\\\\\\\\\\\\\\\\\/
-char		*ft_getmarkprimes(unsigned long num);
+t_uchar		*ft_getmarkprimes(unsigned long num);
 t_llist		*ft_getprimes(unsigned long num);
 #endif
