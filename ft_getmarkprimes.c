@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:02:57 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2024/08/24 20:11:43 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/24 20:21:44 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static t_uchar	*initprimearray(unsigned long size)
 	}
 	i = -1;
 	while (++i < size)
-		tmp[i] = 255;
+		tmp[i] = FT_UCHARMAXVAL;
 	resetbit(&(*tmp), 0);
 	resetbit(&(*tmp), 1);
 	return (tmp);

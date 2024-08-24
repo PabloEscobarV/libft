@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/08/24 19:35:42 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/24 20:21:48 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 # define LIBFT_H
 # include <stdlib.h>
 
-# define HEX_BASE_L	"0123456789ABCDEF"
-# define HEX_BASE_S	"0123456789abcdef"
-# define OCTA_BASE	"012345678"
-# define BIN_BASE	"01"
-# define P_C_BLACK	"\033[30m"
-# define P_C_RED	"\033[31m"
-# define P_C_GREEN	"\033[32m"
-# define P_C_YELLOW	"\033[33m"
-# define P_C_BLUE	"\033[34m"
-# define P_C_MAGENT	"\033[35m"
-# define P_C_CYAN	"\033[36m"
-# define P_C_WHITE	"\033[37m"
-# define FT_BIT_MAX	8
+# define HEX_BASE_L		"0123456789ABCDEF"
+# define HEX_BASE_S		"0123456789abcdef"
+# define OCTA_BASE		"012345678"
+# define BIN_BASE		"01"
+# define P_C_BLACK		"\033[30m"
+# define P_C_RED		"\033[31m"
+# define P_C_GREEN		"\033[32m"
+# define P_C_YELLOW		"\033[33m"
+# define P_C_BLUE		"\033[34m"
+# define P_C_MAGENT		"\033[35m"
+# define P_C_CYAN		"\033[36m"
+# define P_C_WHITE		"\033[37m"
+# define FT_BIT_MAX		8
+# define FT_UCHARMAXVAL	255
 
 enum	e_bits
 {
