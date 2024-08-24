@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/08/19 19:31:06 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/08/24 19:35:42 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@
 # define P_C_MAGENT	"\033[35m"
 # define P_C_CYAN	"\033[36m"
 # define P_C_WHITE	"\033[37m"
+# define FT_BIT_MAX	8
+
+enum	e_bits
+{
+	FT_BITERROR,
+};
 
 typedef unsigned char	t_uchar;
 typedef unsigned int	t_uint;
@@ -160,4 +166,8 @@ void		*ft_perror(const char *msg);
 /////////////////////////////////////////////FT_GETPRIMES\\\\\\\\\\\\\\\\\\\\\/
 t_uchar		*ft_getmarkprimes(unsigned long num);
 t_llist		*ft_getprimes(unsigned long num);
+////////////////////////////////////FT_BIT_OPER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
+t_uchar		getbit(t_uchar *data, t_uint bit);
+t_uchar		resetbit(t_uchar *data, t_uint bit);
+t_uchar		setbit(t_uchar *data, t_uint bit);
 #endif
