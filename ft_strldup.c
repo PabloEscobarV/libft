@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:09:11 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2024/08/01 20:18:53 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/09/24 21:31:45 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ char	*ft_strldup(const char *src, int n)
 	if (!tmp)
 		return (NULL);
 	tmp[n] = '\0';
-	while (--n)
+	while (n)
+	{
+		--n;
 		tmp[n] = src[n];
+	}
 	return (tmp);
 }
