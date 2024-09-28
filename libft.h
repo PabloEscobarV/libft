@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/08/24 20:21:48 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/09/28 19:14:02 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ enum	e_bits
 	FT_BITERROR,
 };
 
+typedef const char		t_cchar;
 typedef unsigned char	t_uchar;
 typedef unsigned int	t_uint;
 typedef unsigned long	t_ulong;
