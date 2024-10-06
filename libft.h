@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/09/28 19:14:02 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/10/06 20:33:39 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,6 +156,7 @@ t_llist		*llistnewnode(void *data);
 t_llist		*llistmap(t_llist *lst, void *(*f)(void *), void (*del)(void *));
 int			llistsize(t_llist *llst);
 t_llist		*llistinsert(t_llist *pos, t_llist *newnode);
+t_llist		*llist_concatenate(t_llist **llst, t_llist *to_llst);
 /////////////////////////////////////////////FT_FREE\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		ft_freenode(void *data);
 void		*ft_free(void *ptr);
