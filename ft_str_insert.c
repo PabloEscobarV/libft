@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 17:17:58 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2024/11/02 17:22:35 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/11/02 23:09:24 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ char	*ft_str_insert_ch_ind(const char *str, const char *str_to, char insrt)
 		while (str[rear] && !ft_isspace(str[rear]))
 			++rear;
 	}
-	return (str_insert(str, str_to, front, rear));
+	return (ft_str_insert(str, str_to, front, rear));
 }
