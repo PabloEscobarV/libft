@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blackrider <blackrider@student.42.fr>      +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 17:20:07 by blackrider        #+#    #+#             */
-/*   Updated: 2024/06/21 16:09:09 by blackrider       ###   ########.fr       */
+/*   Updated: 2024/11/02 17:15:44 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strcpy(char *dest, char const *src)
 {
 	if (!src)
 		return (dest);
-	while (*src != '\0')
+	while (*src)
 	{
 		*dest = *src;
 		++dest;

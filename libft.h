@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/10/06 20:33:39 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/11/02 17:23:29 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,4 +173,7 @@ t_llist		*ft_getprimes(unsigned long num);
 t_uchar		getbit(t_uchar *data, t_uint bit);
 t_uchar		resetbit(t_uchar *data, t_uint bit);
 t_uchar		setbit(t_uchar *data, t_uint bit);
+////////////////////////////////////STR INSERT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
+char		*ft_str_insert(t_cchar *str, t_cchar *str_to, int front, int rear);
+char		*ft_str_insert_ch_ind(t_cchar *str, t_cchar *str_to, char insrt);
 #endif
