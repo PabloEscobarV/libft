@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: black <black@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/11/14 16:09:24 by black            ###   ########.fr       */
+/*   Updated: 2024/11/14 20:39:41 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void		ft_putstr_fd(const char *s, int fd);
 void		ft_putstr(const char *s);
 char		**ft_split(char const *s, char c);
 char		**ft_splitter(const char *str, const char **spltrs);
+char		**ft_splitter_esc(t_cchar *str, t_cchar **spltrs, t_cchar esc);
 char		*ft_straddchr(char *dest, char ch);
 char		*ft_straddchrfree(char *dest, char ch);
 char		*ft_strcpy(char *dest, char const *src);

@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splitter.c                                      :+:      :+:    :+:   */
+/*   ft_splitter_esc.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 15:27:33 by black             #+#    #+#             */
-/*   Updated: 2024/11/14 20:44:51 by Pablo Escob      ###   ########.fr       */
+/*   Created: 2024/11/14 20:29:38 by Pablo Escob       #+#    #+#             */
+/*   Updated: 2024/11/14 20:44:53 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int	get_str_crd(const char *str, t_crd *crd, const char **spltrs)
+static int	get_str_crd(t_cchar *str, t_crd *crd, t_cchar **spltrs, t_cchar esc)
 {
 	int	i;
 
 	while (crd->i < crd->size)
 	{
 		i = ft_cmp_strv(str + crd->i, spltrs);
-		if (i)
+		if (i && (!crd->i || str[crd->i - 1] != esc))
 			break ;
 		++crd->i;
 	}
 	return (i);
 }
 
-static char	*get_str(const char *str, t_crd *crd, const char **spltrs)
+static char	*get_str(t_cchar *str, t_crd *crd, t_cchar **spltrs, t_cchar esc)
 {
 	int		i;
 	int		tmp;
 	char	*result;
 
 	tmp = crd->i;
-	i = get_str_crd(str, crd, spltrs);
+	i = get_str_crd(str, crd, spltrs, esc);
 	if (tmp < crd->i)
 		result = ft_strldup(str + tmp, crd->i - tmp);
 	else
@@ -43,7 +43,7 @@ static char	*get_str(const char *str, t_crd *crd, const char **spltrs)
 	return (result);
 }
 
-static t_llist	*get_data_list(const char *str, t_crd *crd, const char **spltrs)
+static t_llist	*get_list(t_cchar *str, t_crd *crd, t_cchar **splt, t_cchar esc)
 {
 	char	*tmp;
 	t_llist	*llst;
@@ -51,7 +51,7 @@ static t_llist	*get_data_list(const char *str, t_crd *crd, const char **spltrs)
 	llst = NULL;
 	while (crd->i < crd->size)
 	{
-		tmp = get_str(str, crd, spltrs);
+		tmp = get_str(str, crd, splt, esc);
 		if (tmp)
 			llistadd_back(&llst, llistnewnode(tmp));
 	}
@@ -83,7 +83,7 @@ static char	**get_strv_from_llst(t_llist *llst)
 	return (strv);
 }
 
-char	**ft_splitter(const char *str, const char **spltrs)
+char	**ft_splitter_esc(const char *str, const char **spltrs, const char esc)
 {
 	char	**strv;
 	t_llist	*llst;
@@ -93,7 +93,7 @@ char	**ft_splitter(const char *str, const char **spltrs)
 		return (NULL);
 	crd.i = 0;
 	crd.size = ft_strlen(str);
-	llst = get_data_list(str, &crd, spltrs);
+	llst = get_list(str, &crd, spltrs, esc);
 	strv = get_strv_from_llst(llst);
 	llistclear(&llst, ft_void);
 	return (strv);
