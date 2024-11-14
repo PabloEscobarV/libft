@@ -6,7 +6,7 @@
 /*   By: black <black@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/11/14 14:11:28 by black            ###   ########.fr       */
+/*   Updated: 2024/11/14 15:31:07 by black            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ typedef struct s_llist
 	struct s_llist	*previous;
 }					t_llist;
 
+typedef struct s_crd
+{
+	int	i;
+	int	size;
+}		t_crd;
+
 long		ft_atoi_base(const char *nptr, const char *base);
 long		ft_atoi(const char *nptr);
 void		ft_bzero(void *s, size_t n);
@@ -94,6 +100,7 @@ void		ft_putnbr(int n);
 void		ft_putstr_fd(const char *s, int fd);
 void		ft_putstr(const char *s);
 char		**ft_split(char const *s, char c);
+char		**ft_splitter(const char *str, const char **spltrs);
 char		*ft_straddchr(char *dest, char ch);
 char		*ft_straddchrfree(char *dest, char ch);
 char		*ft_strcpy(char *dest, char const *src);
@@ -176,5 +183,7 @@ t_uchar		setbit(t_uchar *data, t_uint bit);
 ////////////////////////////////////STR INSERT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 char		*ft_str_insert(t_cchar *str, t_cchar *str_to, int front, int rear);
 char		*ft_str_insert_ch_ind(t_cchar *str, t_cchar *str_to, char insrt);
+////////////////////////////////////TOOLS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		ft_void(void *data);
+int			cmp_strv(const char *str, const char **spltrs);
 #endif
