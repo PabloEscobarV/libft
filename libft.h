@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
+/*   By: black <black@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/11/02 17:23:29 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2024/11/14 14:11:28 by black            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,4 +176,5 @@ t_uchar		setbit(t_uchar *data, t_uint bit);
 ////////////////////////////////////STR INSERT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 char		*ft_str_insert(t_cchar *str, t_cchar *str_to, int front, int rear);
 char		*ft_str_insert_ch_ind(t_cchar *str, t_cchar *str_to, char insrt);
+void		ft_void(void *data);
 #endif
