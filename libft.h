@@ -6,7 +6,7 @@
 /*   By: black <black@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/11/14 15:31:07 by black            ###   ########.fr       */
+/*   Updated: 2024/11/14 16:09:24 by black            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,5 +185,5 @@ char		*ft_str_insert(t_cchar *str, t_cchar *str_to, int front, int rear);
 char		*ft_str_insert_ch_ind(t_cchar *str, t_cchar *str_to, char insrt);
 ////////////////////////////////////TOOLS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		ft_void(void *data);
-int			cmp_strv(const char *str, const char **spltrs);
+int			ft_cmp_strv(const char *str, const char **spltrs);
 #endif

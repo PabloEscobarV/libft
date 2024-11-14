@@ -6,7 +6,7 @@
 /*   By: black <black@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:27:33 by black             #+#    #+#             */
-/*   Updated: 2024/11/14 15:32:05 by black            ###   ########.fr       */
+/*   Updated: 2024/11/14 16:10:16 by black            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	get_str_crd(const char *str, t_crd *crd, const char **spltrs)
 
 	while (crd->i < crd->size)
 	{
-		i = cmp_strv(str + crd->i, spltrs);
+		i = ft_cmp_strv(str + crd->i, spltrs);
 		if (i)
 			break ;
     ++crd->i;
