@@ -6,46 +6,65 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 17:17:58 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2024/11/02 23:18:36 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/01/22 22:02:46 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_str_insert(const char *str, const char *str_to, int front, int rear)
+static t_uint	get_insrt_size(t_cchar *str, t_uint size_d, t_cchar ch)
 {
-	char	*tmp;
-	char	*result;
+	t_uint	str_size;
 
-	if (!str_to || front > rear)
-		return (NULL);
-	result = malloc((front + ft_strlen(str + rear) + ft_strlen(str_to) + 1)
-			* sizeof(char));
-	tmp = ft_strncpy(result, str, front);
-	tmp = ft_strcpy(tmp, str_to);
-	ft_strcpy(tmp, str + rear);
-	return (result);
+	str_size = 0;
+	if (size_d)
+	{
+		while (*str)
+		{
+			if (*str == ch)
+				str_size += size_d;
+			++str;
+		}
+	}
+	return (str_size);
 }
 
-char	*ft_str_insert_ch_ind(const char *str, const char *str_to, char insrt)
+static void	_str_insert(char *result, t_cchar *str, t_cchar *data, t_cchar ch)
 {
-	int	front;
-	int	rear;
-
-	if (!str_to || !insrt)
-		return (NULL);
-	front = 0;
-	rear = 0;
-	if (str)
+	while (*str)
 	{
-		while (str[front] && str[front] != insrt)
-			++front;
-		rear = front;
-		while (str[rear] && !ft_isspace(str[rear]))
-			++rear;
-		if (!str[front])
-			return (NULL);
+		if (*str == ch)
+			result = ft_strcpy(result, data);
+		else
+		{
+			*result = *str;
+			++result;
+		}
+		++str;
 	}
-	return (ft_str_insert(str, str_to, front, rear));
+}
+
+char	*ft_str_insert(const char *str, const char *data, const char ch)
+{
+	t_uint	result_size;
+	t_uint	size_d;
+	char	*result;
+
+	if (!str || !data || !(*data))
+		return (NULL);
+	size_d = ft_strlen(data);
+	result_size = get_insrt_size(str, size_d, ch);
+	if (!result_size)
+		return (NULL);
+	result_size += ft_strlen(str) - result_size / size_d;
+	result = malloc((result_size + 1) * sizeof(char));
+	if (!result)
+	{
+		ft_perror("ERROR!!! (malloc)");
+		exit(-1);
+	}
+	result[result_size] = '\0';
+	_str_insert(result, str, data, ch);
+	return (result);
 }

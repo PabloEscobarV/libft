@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2024/11/14 20:39:41 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/01/22 22:01:51 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,8 +182,7 @@ t_uchar		getbit(t_uchar *data, t_uint bit);
 t_uchar		resetbit(t_uchar *data, t_uint bit);
 t_uchar		setbit(t_uchar *data, t_uint bit);
 ////////////////////////////////////STR INSERT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
-char		*ft_str_insert(t_cchar *str, t_cchar *str_to, int front, int rear);
-char		*ft_str_insert_ch_ind(t_cchar *str, t_cchar *str_to, char insrt);
+char		*ft_str_insert(const char *str, const char *data, const char ch);
 ////////////////////////////////////TOOLS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		ft_void(void *data);
 int			ft_cmp_strv(const char *str, const char **spltrs);
