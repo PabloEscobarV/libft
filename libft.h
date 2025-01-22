@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2025/01/22 22:01:51 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/01/22 22:50:21 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,4 +186,6 @@ char		*ft_str_insert(const char *str, const char *data, const char ch);
 ////////////////////////////////////TOOLS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		ft_void(void *data);
 int			ft_cmp_strv(const char *str, const char **spltrs);
+////////////////////////////////////GET ENV\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
+char		*ft_get_env(const char *name, const char **envp);
 #endif
