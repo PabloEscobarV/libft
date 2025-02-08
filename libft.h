@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2025/02/08 21:36:17 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/02/08 21:38:59 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void		ft_putnbr_fd(int n, int fd);
 void		ft_putnbr(int n);
 void		ft_putstr_fd(const char *s, int fd);
 void		ft_putstr(const char *s);
-char		*ft_skip_spaces(const char *str);
+t_cchar		*ft_skip_spaces(const char *str);
 char		**ft_split(char const *s, char c);
 char		**ft_splitter(const char *str, const char **spltrs);
 char		**ft_splitter_esc(t_cchar *str, t_cchar **spltrs, t_cchar esc);
