@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2025/02/08 21:38:59 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/02/23 13:28:57 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ void		ft_putstr(const char *s);
 t_cchar		*ft_skip_spaces(const char *str);
 char		**ft_split(char const *s, char c);
 char		**ft_splitter(const char *str, const char **spltrs);
-char		**ft_splitter_esc(t_cchar *str, t_cchar **spltrs, t_cchar esc);
 char		*ft_straddchr(char *dest, char ch);
 char		*ft_straddchrfree(char *dest, char ch);
 char		*ft_strcpy(char *dest, char const *src);
@@ -186,7 +185,7 @@ t_uchar		setbit(t_uchar *data, t_uint bit);
 char		*ft_str_insert(const char *str, const char *data, const char ch);
 ////////////////////////////////////TOOLS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		ft_void(void *data);
-int			ft_cmp_strv(const char *str, const char **spltrs);
+t_cchar	*ft_cmp_strv(const char *str, const char **spltrs);
 ////////////////////////////////////GET ENV\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 char		*ft_get_env(const char *name, const char **envp);
 #endif

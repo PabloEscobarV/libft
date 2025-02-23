@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polenyc <polenyc@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:22:31 by polenyc           #+#    #+#             */
-/*   Updated: 2024/06/24 12:29:40 by polenyc          ###   ########.fr       */
+/*   Updated: 2025/02/23 01:22:24 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 const char	*ft_strlcmp(const char *str, const char *cmp)
 {
-	while (*str && (*str == *cmp))
+	if (str && cmp)
 	{
-		++str;
-		++cmp;
+		while (*str && (*str == *cmp))
+		{
+			++str;
+			++cmp;
+		}
+		if (!(*str) || !(*cmp))
+			return (str);
 	}
-	if (!(*str) || !(*cmp))
-		return (str);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:27:33 by black             #+#    #+#             */
-/*   Updated: 2024/11/14 20:44:51 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/02/23 13:27:46 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 static int	get_str_crd(const char *str, t_crd *crd, const char **spltrs)
 {
-	int	i;
+	t_cchar	*tmp;
 
 	while (crd->i < crd->size)
 	{
-		i = ft_cmp_strv(str + crd->i, spltrs);
-		if (i)
+		tmp = ft_cmp_strv(str + crd->i, spltrs);
+		if (tmp)
 			break ;
 		++crd->i;
 	}
-	return (i);
+	return (ft_strlen(tmp));
 }
 
 static char	*get_str(const char *str, t_crd *crd, const char **spltrs)
