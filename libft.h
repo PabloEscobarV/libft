@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2025/02/23 13:28:57 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/03/11 23:26:37 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define P_C_WHITE		"\033[37m"
 # define FT_BIT_MAX		8
 # define FT_UCHARMAXVAL	255
+# define FT_ESCAPE			'\\'
 
 enum	e_bits
 {
