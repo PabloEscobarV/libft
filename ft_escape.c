@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 23:23:40 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2025/03/11 23:29:08 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/03/11 23:34:07 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ t_uchar	ft_escape(t_cchar *str, t_uint crd)
 		--tmp;
 	if (tmp < 0)
 		tmp = 1;
-	return ((crd - tmp) % 2);
+	return (!((crd - tmp) % 2));
 }
