@@ -6,13 +6,13 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 23:23:40 by Pablo Escob       #+#    #+#             */
-/*   Updated: 2025/03/11 23:26:58 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/03/11 23:29:08 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_escape(t_cchar *str, t_uint crd)
+t_uchar	ft_escape(t_cchar *str, t_uint crd)
 {
 	int	tmp;
 
