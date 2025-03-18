@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2025/03/17 20:50:15 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/03/18 20:01:14 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,20 @@
 # define FT_BIT_MAX		8
 # define FT_UCHARMAXVAL	255
 # define FT_ESCAPE			'\\'
+
+enum	e_errorcodes
+{
+	E_ERR = -1,
+	E_OK,
+	E_KO,
+	E_ERROR,
+};
+
+enum	e_state
+{
+	E_FALSE,
+	E_TRUE,
+};
 
 enum	e_bits
 {
@@ -187,6 +201,7 @@ char		*ft_str_insert(const char *str, const char *data, const char ch);
 ////////////////////////////////////TOOLS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 void		ft_void(void *data);
 t_cchar	*ft_cmp_strv(const char *str, const char **spltrs);
+int			ft_cmp_strv_crd(const char *str, const char **strv);
 ////////////////////////////////////GET ENV\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 char		*ft_get_env(const char *name, const char **envp);
 t_uchar	ft_escape(t_cchar *str, t_uint crd);
