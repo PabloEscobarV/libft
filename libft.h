@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2025/03/19 00:55:40 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/03/23 14:55:43 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,9 @@
 enum	e_errorcodes
 {
 	E_ERR = -1,
-	E_OK,
-	E_KO,
-	E_ERROR,
-};
-
-enum	e_state
-{
 	E_FALSE,
 	E_TRUE,
+	E_ERROR,
 };
 
 enum	e_bits
@@ -206,6 +200,5 @@ int			ft_cmp_strv_crd(const char *str, const char **strv);
 ////////////////////////////////////GET ENV\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/
 char		*ft_get_env(const char *name, const char **envp);
 int			ft_escape(t_cchar *str, t_uint crd);
-int			ft_escape_ch(t_cchar *str, t_uint crd);
 
 #endif
