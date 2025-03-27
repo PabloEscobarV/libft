@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_void.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: black <black@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:09:08 by black             #+#    #+#             */
-/*   Updated: 2024/11/14 14:18:14 by black            ###   ########.fr       */
+/*   Updated: 2025/03/27 23:26:08 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_void(void *data)
 {
-	++data;
+	(void)data;
 }
