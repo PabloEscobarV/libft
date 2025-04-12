@@ -6,7 +6,7 @@
 /*   By: Pablo Escobar <sataniv.rider@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:04:38 by polenyc           #+#    #+#             */
-/*   Updated: 2025/03/23 14:55:43 by Pablo Escob      ###   ########.fr       */
+/*   Updated: 2025/04/12 22:15:09 by Pablo Escob      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define FT_BIT_MAX		8
 # define FT_UCHARMAXVAL	255
 # define FT_ESCAPE			'\\'
+# define FT_SQTS				'\''
+# define FT_DQTS				'\"'
 
 enum	e_errorcodes
 {
@@ -94,6 +96,7 @@ int			ft_isascii(int arg);
 int			ft_isdigit(int arg);
 int			ft_isprint(int arg);
 int			ft_isspace(int c);
+int			ft_is_qts(char ch);
 char		*ft_itoa(int n);
 int			ft_matsize(const char **matrix);
 void		*ft_memchr(const void *s, int c, size_t n);
